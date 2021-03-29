@@ -1,35 +1,3 @@
-=begin  
-class player:
-init => name, number, score =3
-methods => add point, substract point
- ask question(game.question)
- check if answer right(otherplayer.answer)
- right answer reply
- wrong answer reply
-
-class game
-  init => id, players
-  methods -=> get current player with score
-  create math question with answer
-  check if answer ok
-  modify score, send player reply
-
-  diagram https://app.diagrams.net/#G1f6vCi38Bzdc4qbZ9vGsoA3Elb4u31DXm
-=end
-
-
-class Player
-  attr_accessor :name, :score
-
-  def initialize(id, name)
-    @id = id
-    @name = name
-    @score = 3
-    @currently_asking = false
-    @currently_answering = false
-  end
-end
-
 class Game
   attr_accessor :player_asking, :player_answering, :good_answer
   @@good_answer = 0
@@ -87,11 +55,4 @@ class Game
       puts get_score()
     end
   end
-
 end
-
-player1 = Player.new(1, "Player 1")
-player2 = Player.new(2, "Player 2")
-game1 = Game.new(1, player1, player2)
-puts game1.play
-
